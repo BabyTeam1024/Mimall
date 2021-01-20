@@ -21,13 +21,13 @@ export default {
     }
   },
   mounted(){
-    let url = "http://127.0.0.1:8800"
+    let url = "/api/aaa";
     jsonp(url,(err,res)=>{
       let result = res;
       this.data = result;
 
     })
-  }
+  } 
 }
 
 </script>
