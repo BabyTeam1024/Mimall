@@ -1,33 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-// import axios from 'axios'
-import jsonp from 'jsonp'
+import storage from "./storage/index"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
   },
   data(){
     return {
-        age:30,
-        data:''
+
     }
   },
   mounted(){
-    let url = "/api/aaa";
-    jsonp(url,(err,res)=>{
-      let result = res;
-      this.data = result;
-
-    })
-  } 
+    // storage.setItem("b",1)
+    // storage.setItem("abc",{a:1},"user")
+    storage.clear("b")
+  }
 }
 
 </script>
